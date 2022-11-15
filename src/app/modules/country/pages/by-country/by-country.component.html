@@ -14,13 +14,19 @@
 </div>
 
 <hr/>
-<div class="alert alert-danger">
-    No se encontró ningún país con el nombre: ....
+<div
+    *ngIf="isError"
+    class="alert alert-danger"
+>
+    No se encontró ningún país con el nombre: {{ term }}
 </div>
 
 <div class="row">
     <div class="col">
-        <table class="table table-hover">
+        <table 
+            *ngIf="!isError"
+            class="table table-hover"
+        >
             <thead>
                 <tr>
                     <th>#</th>
