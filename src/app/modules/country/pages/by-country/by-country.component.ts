@@ -16,8 +16,8 @@ export class ByCountryComponent {
     this.isError = false;
     this.countryService.searchCountry( this.term )
       .subscribe({
-        next: ( resp ) => {
-          console.log(resp);
+        next: ( countries ) => {
+          console.log(countries);
         },
         error: ( err ) => {
           this.isError = true;
