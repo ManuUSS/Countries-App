@@ -11,6 +11,7 @@ export class ByCountryComponent {
   public term: string = '';
   public isError: boolean = false;
   public countries: CountryResponse[] = [];
+  public placeholder: string = 'Busca un país...';
 
   constructor( private countryService:CountryService ) { }
 

@@ -12,10 +12,17 @@ export class CountryService {
 
     constructor( private http: HttpClient ) { }
 
-    searchCountry( term: string ):Observable<CountryResponse[]> {
+    public searchCountry( term: string ):Observable<CountryResponse[]> {
 
         const url = `${ this.apiUrl }/name/${ term }`;
         return this.http.get<CountryResponse[]>( url );
 
+    }
+
+    public searchCapital( term: string ):Observable<CountryResponse[]> {
+            
+        const url = `${ this.apiUrl }/capital/${ term }`;
+        return this.http.get<CountryResponse[]>( url );
+    
     }
 }

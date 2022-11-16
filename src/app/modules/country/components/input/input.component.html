@@ -1,7 +1,7 @@
 <form autocomplete="off" (ngSubmit)="search()">
     <input type="text" 
         name="term" 
-        placeholder="Buscar país..." 
+        [placeholder]="placeholder" 
         class="form-control"
         [(ngModel)]="term"
         (input)="keyPressed()"

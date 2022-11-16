@@ -5,10 +5,10 @@
         <app-input
             (onSearch)="search( $event )"
             (onDebounce)="suggestions( $event )"
+            [placeholder]="placeholder"
         ></app-input>
     </div>
 </div>
-
 <hr/>
 <div
     *ngIf="isError"
