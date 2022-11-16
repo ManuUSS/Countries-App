@@ -25,4 +25,12 @@ export class CountryService {
         return this.http.get<CountryResponse[]>( url );
     
     }
+
+    public searchRegion( term: string ):Observable<CountryResponse[]> {
+            
+        const url = `${ this.apiUrl }/region/${ term }`;
+        return this.http.get<CountryResponse[]>( url );
+    
+    }
+
 }
