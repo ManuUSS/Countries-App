@@ -31,4 +31,8 @@ export class ByCountryComponent {
       });
   }
 
+  public suggestions = ( term:string ) => {
+    this.isError = false;
+  }
+
 }
