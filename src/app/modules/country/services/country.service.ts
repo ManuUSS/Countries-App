@@ -33,4 +33,11 @@ export class CountryService {
     
     }
 
+    public getCountryByCode( id: string ):Observable<CountryResponse> {
+            
+        const url = `${ this.apiUrl }/alpha/${ id }`;
+        return this.http.get<CountryResponse>( url );
+    
+    }
+
 }
