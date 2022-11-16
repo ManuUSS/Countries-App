@@ -2,7 +2,9 @@
 <hr/>
 <div class="row">
     <div class="col">
-        <app-input></app-input>
+        <app-input
+            (onSearch)="search( $event )"
+        ></app-input>
     </div>
 </div>
 
