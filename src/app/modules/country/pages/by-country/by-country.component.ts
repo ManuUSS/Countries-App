@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CountryResponse } from '../../interfaces/country.interface';
 import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-by-country',
-  templateUrl: './by-country.component.html'
+  templateUrl: './by-country.component.html',
 })
 export class ByCountryComponent {
 
@@ -25,6 +25,7 @@ export class ByCountryComponent {
         error: ( err ) => {
           this.isError = true;
           this.countries = [];
+          console.error( err );
         }
       });
   }

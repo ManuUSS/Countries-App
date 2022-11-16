@@ -7,6 +7,8 @@ import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { ViewCountryComponent } from './pages/view-country/view-country.component';
+import { CountryTableComponent } from './components/table/country-table.component';
+import { InputComponent } from './components/input/input.component';
 
 
 
@@ -15,7 +17,9 @@ import { ViewCountryComponent } from './pages/view-country/view-country.componen
     ByCapitalComponent,
     ByCountryComponent,
     ByRegionComponent,
-    ViewCountryComponent
+    ViewCountryComponent,
+    CountryTableComponent,
+    InputComponent
   ],
   exports: [
     ByCapitalComponent,
