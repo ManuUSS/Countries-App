@@ -11,24 +11,19 @@ export class ByRegionComponent {
 
   public regions: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
   public activeRegion: string = '';
-  public term: string = '';
-  public isError: boolean = false;
   public countries: CountryResponse[] = [];
   public placeholder: string = 'Busca una región...';
 
   constructor( private countryService:CountryService ) { }
 
   public search = ( toSearch:string ) => {
-    this.isError = false;
-    this.term = toSearch;
-    this.countryService.searchRegion( this.term )
+    this.countryService.searchRegion( toSearch )
       .subscribe({
         next: ( countries ) => {
           this.countries = countries;
           console.log( countries );
         },
         error: ( err ) => {
-          this.isError = true;
           this.countries = [];
           console.error( err );
         }
@@ -36,11 +31,12 @@ export class ByRegionComponent {
   }
 
   public suggestions = ( term:string ) => {
-    this.isError = false;
   }
 
   public activateRegion( region:string ):void {
+    if ( region === this.activeRegion ) { return; }
     this.activeRegion = region;
+    this.countries = [];
     this.search( region );
   }
 
