@@ -20,7 +20,7 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
     
     this.debouncer
-    .pipe(debounceTime( 400 ))
+    .pipe(debounceTime( 250 ))
     .subscribe( value => {
       this.onDebounce.emit( value );
     });
