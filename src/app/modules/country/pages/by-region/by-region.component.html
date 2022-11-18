@@ -1,20 +1,22 @@
-<h2>Búsqueda por región: {{ activeRegion | titlecase }}</h2>
-<hr/>
+<div class="animate__animated animate__fadeIn">
+    <h2>Búsqueda por región: {{ activeRegion | titlecase }}</h2>
+    <hr/>
 
-<div class="row">
-    <div class="col">
-        <button *ngFor="let region of regions" 
-            class="btn btn-outline-primary me-1"
-            [class.active]="region === activeRegion"
-            (click)="activateRegion( region )"
-        >
-            {{ region | titlecase }}
-        </button>
+    <div class="row">
+        <div class="col">
+            <button *ngFor="let region of regions" 
+                class="btn btn-outline-primary me-1"
+                [class.active]="region === activeRegion"
+                (click)="activateRegion( region )"
+            >
+                {{ region | titlecase }}
+            </button>
+        </div>
     </div>
-</div>
 
-<div *ngIf="countries.length > 0" class="row">
-    <div class="col">
-        <app-country-table [countries]="countries"></app-country-table>
+    <div *ngIf="countries.length > 0" class="row">
+        <div class="col">
+            <app-country-table [countries]="countries"></app-country-table>
+        </div>
     </div>
 </div>
