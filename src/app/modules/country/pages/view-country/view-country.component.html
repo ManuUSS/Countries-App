@@ -25,7 +25,25 @@
                 <li class="list-group-item">
                     <b>Población: </b> {{ country.population }}
                 </li>
+                <li class="list-group-item d-flex flex-column">
+                    <p>
+                        <b>Latitud: </b>
+                         {{ country.latlng[0] }}
+                    </p>
+                    <p>
+                        <b>Longitud: </b> 
+                        {{ country.latlng[1] }}
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <b>Código: </b> {{ country.cca3 }}
+                </li>
             </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary me-1">{{ country.name.official }}</span>
         </div>
     </div>
 </ng-template>
