@@ -9,6 +9,8 @@ import { CountryService } from '../../services/country.service';
 })
 export class ByRegionComponent {
 
+  public regions: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
+  public activeRegion: string = '';
   public term: string = '';
   public isError: boolean = false;
   public countries: CountryResponse[] = [];
@@ -35,6 +37,11 @@ export class ByRegionComponent {
 
   public suggestions = ( term:string ) => {
     this.isError = false;
+  }
+
+  public activateRegion( region:string ):void {
+    this.activeRegion = region;
+    this.search( region );
   }
 
 }
